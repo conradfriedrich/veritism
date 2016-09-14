@@ -1,0 +1,9 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!spinfohausarbeit.tex
+!spinfohausarbeit.bib
+!spinfohausarbeit.pdf
+!*.png
