@@ -1,5 +1,5 @@
 %!TEX program = xelatex
-\documentclass[11pt,numbers=noenddot]{scrartcl}
+\documentclass[12pt,numbers=noenddot]{scrartcl}
 % \usepackage[ngerman]{babel}
 \usepackage[a4paper,lmargin={3cm},rmargin={3.5cm}, tmargin={2.5cm},bmargin = {2.5cm}]{geometry}
 \usepackage{amsmath}
@@ -14,8 +14,12 @@
 % \linespread{1.2}
 \usepackage{setspace}
 \onehalfspacing
+
+\usepackage[authordate]{biblatex-chicago}
+\addbibresource{veritism.bib}
+
 % \usepackage[square]{natbib}
-\usepackage{jurabib}
+% \usepackage{jurabib}
 % \usepackage {algorithm2e}
 
 % Package, das die Benutzung von Old Standard erlaubt
@@ -30,12 +34,21 @@
 
 \setmainfont{Old Standard TT}
 
-\bibliographystyle{jurabib}
-\renewcommand*{\bibbtsep}{In: }
-\renewcommand*{\bibjtsep}{In: }
+% \bibliographystyle{jurabib}
+% \bibliographystyle{jureco} 
+% \renewcommand*{\bibbtsep}{In: }
+% \renewcommand*{\bibjtsep}{In: }
+
+% \renewcommand*{\biblnfont}{\normalfont}
+% \renewcommand*{\bibfnfont}{\normalfont}
+% \renewcommand*{\bibelnfont}{\normalfont}
+% \renewcommand*{\bibefnfont}{\normalfont}
+% \renewcommand*{\bibtfont}{\textit}
+% \renewcommand*{\bibbtfont}{\textit}
 % \jurabibsetup{
-%   % authorformat=and,
-  
+%   bibformat=ibidem,
+%   bibformat=compress,
+%   dotafter=bibentry
 % }
 
 % \makeatletter
@@ -96,12 +109,12 @@
 
 \section{Introduction}
 
-In a certain sense, and one that, for example, \citet{Berker2013-BERETA-2} holds, epistemology is an inherently normative endeavor. To Berker the most fundamental question of epistemology is, despite the etymological origins of its name, not concerned with what makes a belief count as knowledge but is instead purely normative: “What should I believe“?
+In a certain sense, and one that, for example, \textcite{Berker2013-BERETA-2} holds, epistemology is an inherently normative endeavor. To Berker the most fundamental question of epistemology is, despite the etymological origins of its name, not concerned with what makes a belief count as knowledge but is instead purely normative: “What should I believe“?
 
 In pondering this question the similarities of epistemology to the theory of normativity and especially ethics are strikingly obvious, if only at a first superficial glance. It makes a lot of sense then, if one is to undergo the project of viewing epistemology through the lens of normativity, to at first take a look at ethical theories of value anf normativity. While the properties of epistemic and ethical objects of interest may stop sooner than expected, the groundwork in ethical theory shouldn't be completely disregarded, either.
 
 Go on and on
-
+\footnote{As may be obvious, I presuppose a realist notion of truth.}
 \section{Veritism}
 
 \subsection{Values}
@@ -118,11 +131,11 @@ Why is it ever that anyone \emph{should} believe something, or is \emph{required
 
 \subsection{What is Veritism then? Clearly explain the position, and what it tries to do. Use quotes from Bonjour, Lehrer.}
 
-\citet[54]{Goldman2002-GOLTUO-2} defines veritism as  “... the unity if epistemic virtues in which the cardinal value, or underlying motif, is something like true, or accurate, belief”. Borrowing the terminology from Goldman, \citet[360]{Berker2013-BERETA-2} proposes to label as veritism the position that „ ... our only epistemic goals are (i) the accumulation of true beliefs and (ii) the avoidance of false beliefs”. \citet{Zagzebski2004-ZAGEVM-2} has a different name for a very similar position, what she calls epistemic value monism: “Any epistemic value other than the truth of a belief derives from the good of truth“.
+\textcite[54]{Goldman2002-GOLTUO-2} defines veritism as  “... the unity if epistemic virtues in which the cardinal value, or underlying motif, is something like true, or accurate, belief”. Borrowing the terminology from Goldman, \textcite[360]{Berker2013-BERETA-2} proposes to label as veritism the position that „ ... our only epistemic goals are (i) the accumulation of true beliefs and (ii) the avoidance of false beliefs”. \textcite{Zagzebski2004-ZAGEVM-2} has a different name for a very similar position, what she calls epistemic value monism: “Any epistemic value other than the truth of a belief derives from the good of truth“.
 
 The unifying theme of these quotes is apparent: What’s central to all three accounts clearly is the notion of \emph{true belief}. True, or accurate, belief has to be a value, goal, or motif with a distinct role in the theory. This role is determined as cardinal, single, and non-derivative. In other words, veritism says that true belief has to be regarded as the only \emph{final} value. No other epistemic concept like knowledge or justification has final epistemic value. It is important to note, however, that this does \emph{not} entail that other epistemic concepts have \emph{no} epistemic value, they just don’t have \emph{final} epistemic value.
 
-That is the gist of it: Veritism consists in the claim that true belief is the only epistemic value or goal. Yet just this simple claim is not enough: If the goal is to have as many true beliefs as possible, I could just believe every proposition I encounter. I would certainly stumble upon a lot of true ones, but would also hold lots and lots of plainly false beliefs. This is what \citet[360]{Berker2013-BERETA-2} calls \emph{epistemic recklessness}. To respond to this, it seems quite natural to expand the epistemic goal to consist of to goals, really: ”...the twin goals of acquiring true beliefs and avoiding false ones“, as \citet[339]{Berker2013-BERETA-2} puts it. This idea has already been proposed by \citet[17]{James1896-JAMTWT-19}, who coined the phrase ”Believe truth! Shun error!“.
+That, basically, is the gist of the position: veritism consists in the claim that true belief is the only epistemic value or goal. Yet just this simple claim is not enough. if the goal is to have as many true beliefs as possible, Gullible Gilbert could just believe every proposition he encounters. Gilbert would certainly stumble upon a lot of true ones, but would also hold lots and lots of plainly false beliefs. Still, this would promote the only epistemic goal, as Gilbert accumulates more and more true beliefs and generates more epistemic value. I will flesh out in more detail in what sense Gilbert’s mental state and the whole of his beliefs can have cumulative value derived from a just true belief as valuable. It seems then that by just believing every proposition there is Gilbert is able to get into an epistemic state of maximal value. This is what \textcite[360]{Berker2013-BERETA-2} calls \emph{epistemic recklessness}. Intuitively though, this state is a lot less valuable than the state Precise Priscilla is in: She beliefs all of the true propositions To respond to this, it seems quite natural to expand the epistemic goal to consist of to goals, really: ”...the twin goals of acquiring true beliefs and avoiding false ones“, as \textcite[339]{Berker2013-BERETA-2} puts it. This idea has already been proposed by \textcite[17]{James1896-JAMTWT-19}, who coined the phrase: ”Believe truth! Shun error!“.
 \begin{itemize}
     
     \item how does it relate to the deontic? What does that mean, deontic epistemology? (Steup?)
@@ -139,14 +152,14 @@ That is the gist of it: Veritism consists in the claim that true belief is the o
 
 \subsection{Problems for the Veritistic account}
 \begin{itemize}
-\item Objection from significance - Some true beliefs seem more valuable than other true beliefs. How can the truth monist account for that? - Novel Idea: Perhaps not truth, but INFORMATION is the fundamental epistemic value. Look up Definition of information by shannon. The amount of information a message carries is determined by the number of alternatives that can be ruled out by the receiver. The more alternatives ruled out, the higher the information! Compare: The value of belief has is determined by the amount of possibilities (or possible worlds) it rules out.
-    \item Value Problem / Meno Problem. Explain what it is and why it hurts veritism 
+    \item Objection from significance - Some true beliefs seem more valuable than other true beliefs. How can the truth monist account for that? - Novel Idea: Perhaps not truth, but INFORMATION is the fundamental epistemic value. Look up Definition of information by shannon. The amount of information a message carries is determined by the number of alternatives that can be ruled out by the receiver. The more alternatives ruled out, the higher the information! Compare: The value of belief has is determined by the amount of possibilities (or possible worlds) it rules out.
+    \item Value Problem aka Meno Problem aka Swamping Problem (Show differences). Explain what it is and why it hurts veritism 
     \item Discuss how it could be solved in combination with accounts of justification (for example reliabilism) see Goldman/Olsson
     \item Own Discussion of a solution (perhaps from modal stability)
     \item The solution? Is there a solution without reliabilism, i.e. generic?
 \end{itemize}
 \begin{itemize}
-    \item Problem that \citet{Berker2013-BERETA-2} raises
+    \item Problems that \textcite{Berker2013-BERETA-2} raises
     \item Answers that Goldman gives
     \item This does not solve the problem for the veritist in general. Even without deontic definition, this problem arises(?)
     \item Berker divides consequentialist theories in three parts: theory of final value, theory of overall value, and a deontic theory, as opposed to just divide into axiological and deontological considerations. 
@@ -170,7 +183,7 @@ Objection:
 \nocite{sep-value-theory,Goldman2002-GOLTUO-2,James1896-JAMTWT-19,James1907-JAMP,Zagzebski2004-ZAGEVM-2,Berker2013-BERETA-2,Berker2013-BERTRO-24,Goldman2015-GOLRVA,Berker2015-BERRTG-2}
 
 \section{Conclusion}
-\bibliography{veritism}
 
+\printbibliography
 
 \end{document}
