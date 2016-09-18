@@ -5,8 +5,10 @@
 \usepackage{amsmath}
 \usepackage{setspace}
 \onehalfspacing
+% Entfernt Blocksatz!
+\usepackage[document]{ragged2e}
 
-\usepackage[authordate]{biblatex-chicago}
+\usepackage[authordate, ibidtracker=context]{biblatex-chicago}
 \addbibresource{veritism.bib}
 
 % \usepackage[square]{natbib}
@@ -25,38 +27,11 @@
 % \setmainfont{Old Standard TT}
 \setmainfont{Baskerville}
 \newfontfamily\osfamily{Old Standard TT}
+% \newfontfamily\osfamily{Helvetica}
 
-% \settocfeature[toc][1]{entryhook}{\osfamily\bfseries\larger} 
-% \settocfeature[toc][2]{entryhook}{\osfamily\normalsize} 
-% \settocfeature[toc][3]{entryhook}{\osfamily\normalsize\itshape}
 
-% \bibliographystyle{jurabib}
-% \bibliographystyle{jureco} 
-% \renewcommand*{\bibbtsep}{In: }
-% \renewcommand*{\bibjtsep}{In: }
-
-% \renewcommand*{\biblnfont}{\normalfont}
-% \renewcommand*{\bibfnfont}{\normalfont}
-% \renewcommand*{\bibelnfont}{\normalfont}
-% \renewcommand*{\bibefnfont}{\normalfont}
-% \renewcommand*{\bibtfont}{\textit}
-% \renewcommand*{\bibbtfont}{\textit}
-% \jurabibsetup{
-%   bibformat=ibidem,
-%   bibformat=compress,
-%   dotafter=bibentry
-% }
-
-% \makeatletter
-% % \renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.6em}}
-% \renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.6em}}
-% \renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.4em}{4.5em}}
-% \makeatother
-
-% \addtokomafont{disposition}{\normalfont}
-
-\setkomafont{subject}{\osfamily\small}
-\addtokomafont{title}{\osfamily\bfseries}
+\setkomafont{subject}{\small}
+\addtokomafont{title}{\osfamily}
 
 \addtokomafont{publishers}{\normalfont\small}
 \addtokomafont{date}{\normalfont\small}
@@ -69,17 +44,25 @@
 % \renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
 
 
-\subject{  University of Cologne \\
-  Department of Philosophy \\
-  Bachelor Thesis
-  }
-\title{Veritism and Epistemic Normativity}
+\subject{}
+\title { Veritism and Epistemic Normativity }
 \author{C. Friedrich}
 \date{\today}
 
+\publishers{ University of Cologne \\
+    Department of Philosophy \\
+    Bachelor Thesis \\
+    \begin{center}
+        \includegraphics[scale=0.5]{philfak.jpg}
+    \end{center}
+}
 
-\usepackage{amsthm}
-\newtheorem*{defi}{Definition}
+\makeatletter
+\renewbibmacro*{cite:ibid}{%
+  \iftoggle{cms@noibid}%
+    {\blx@ibidreset\usebibmacro{cite}}%
+    {\printtext[bibhyperref]{\bibstring[\mkibid]{ibidem}}}}
+\makeatother
 
 
 \begin{document}
@@ -96,9 +79,16 @@
 
 \section{Introduction}
 
+\begin{quote}
+    It is not that hard to be skeptical about value. You can't see values. You can't touch them. And many think we can't even define them. Partly as a result, our disagreements about value have an interminable and intractable feel. Philosophically speaking, skepticism about value seems an easy sell.
+
+    At least this is the case when we are talking about the type of value that most philosophers worry about—moral value. But we have other values besides moral values. And one of the most basic of these other values is the value of truth. \autocite[225]{Lynch2009}
+\end{quote}
+
+
 In a certain sense, and one that, for example, \textcite{Berker2013-BERETA-2} holds, epistemology is an inherently normative endeavor. To Berker the most fundamental question of epistemology is, despite the etymological origins of its name, not concerned with what makes a belief count as knowledge but is instead purely normative: “What should I believe“?
 
-In pondering this question the similarities of epistemology to the theory of normativity and especially ethics are strikingly obvious, if only at a first superficial glance. It makes a lot of sense then, if one is to undergo the project of viewing epistemology through the lens of normativity, to at first take a look at ethical theories of value anf normativity. While the properties of epistemic and ethical objects of interest may stop sooner than expected, the groundwork in ethical theory shouldn't be completely disregarded, either.
+In pondering this question the similarities of epistemology to the theory of normativity and especially ethics are strikingly obvious, if only at a first superficial glance. It makes a lot of sense then, if one is to undergo the project of viewing epistemology through the lens of normativity, to at first take a look at ethical theories of value and normativity. While the properties of epistemic and ethical objects of interest may stop sooner than expected, the groundwork in ethical theory shouldn't be completely disregarded, either.
 
 Go on and on
 \begin{itemize}
@@ -107,19 +97,21 @@ Go on and on
 \end{itemize}
 
 \begin{quote}
- I suggest that the primary function of cognition in human life is to acquire true rather than false beliefs about matters that are of interest or importance to us. \parencite[29]{Alston2005-ALSBJD}
+ I suggest that the primary function of cognition in human life is to acquire true rather than false beliefs about matters that are of interest or importance to us. \textcite[29]{Alston2005-ALSBJD}
 \end{quote}
 
 \begin{quote}
-What makes us cognitive beings at all is our capacity for belief, and the goal of our distinctively cognitive endeavors is truth: we want our beliefs to correctly and accurately depict the world. \parencite[7]{Bonjour1985}
+What makes us cognitive beings at all is our capacity for belief, and the goal of our distinctively cognitive endeavors is truth: we want our beliefs to correctly and accurately depict the world. \textcite[7]{Bonjour1985}
 \end{quote}
 
 [More quotes can be found in \textcite{Goldman2002-GOLTUO-2}.]
-\footnote{As may be obvious, I presuppose a realist notion of truth. As perhaps less obvious, throughout this paper I assume that every proposition is either true or false and not neither or both. I won't discuss problems that arise for the veritist account if one supposes, say, dialetheism.}
+\footnote{As may be obvious, I presuppose a realist notion of truth. As perhaps less obvious, throughout this paper I assume that every proposition is either true or false and not neither or both. I won't discuss complications that arise for the veritist account if one supposes, say, dialetheism. Let's further suppose that eternalism about propositions is true, that is, one and the same proposition doesn't change its truth value, ever, in order not to run into complications when faced with a challenge from relativism brought forth by \textcite{Brogaard2008-BROTTA-3}.}
+
 \section{Veritism}
+\subsection{Values and Norms}\label{sec:values}
 
 \begin{quote}
-I don't know how to prove that the acquisition, retention, and use of true beliefs about matters that are of interest and/or importance is the most basic and most central goal of cognition. I don't know anything that is more obvious from which it could be derived. But I suggest that anyone can see its obviousness by reflecting on what would happen to human life if we were either without beliefs at all or if our beliefs were all or mostly false. Without beliefs we would be thrown back on instinct as our only guide to behavior. And as far as thought, understanding, linguistic communication, theorizing, science, art, religion-all the aspects of life that require higher-level cognitive processes-are concerned, we would be bereft of them altogether. And if we had beliefs but ones that were mostly false, we would constantly be led astray in our practical endeavors and would be unlikely to survive for long. \parencite[30]{Alston2005-ALSBJD}
+I don't know how to prove that the acquisition, retention, and use of true beliefs about matters that are of interest and/or importance is the most basic and most central goal of cognition. I don't know anything that is more obvious from which it could be derived. But I suggest that anyone can see its obviousness by reflecting on what would happen to human life if we were either without beliefs at all or if our beliefs were all or mostly false. Without beliefs we would be thrown back on instinct as our only guide to behavior. And as far as thought, understanding, linguistic communication, theorizing, science, art, religion-all the aspects of life that require higher-level cognitive processes-are concerned, we would be bereft of them altogether. And if we had beliefs but ones that were mostly false, we would constantly be led astray in our practical endeavors and would be unlikely to survive for long. \textcite[30]{Alston2005-ALSBJD}
 \end{quote}
 
 Why is it ever that anyone \emph{should} believe something, or is \emph{required} to believe, or is \emph{justified} in believing, or is \emph{rational} to believe? What is that yields some kind of normative requirement to the believer? A most natural answer, one that immediately springs to mind, is it's connection to the truth. You should believe that proposition because it is most likely to be true! (You are justified in believing that proposition because it is the only one that your evidence supports. It would be completely irrational to believe that other proposition, you don't have any reason to believe it.) What else than true belief is the epistemic goal of anyone in the business of believing anything, that is, a cognitive agent? It is this very intuitive thought that motivates postulating truth as an–or the–epistemic value.
@@ -128,26 +120,46 @@ When talking about values, the deontic or about normativity in general, it is he
 
 A good starting point to look for some guidance when talking about values are the fields of value theory or, more specifically, axiology.
 
-\begin{itemize}
-    \item Taxonomy of the normative
-    \item Intrinsic Value vs Extrinsic value 
-    \item Instrumental Value vs. Final value 
-    \item Good vs. right 
-    \item value vs goal (can be footnote)
-    \item relation to the deontic: what does it mean for values to produce or guide or motivate or explain deontic norms? is justification inherently normative? reasons / rationality?
-    \item Teleology / Consequentialism: A theory of Normativity with a central value / central values as its fundamental principle.
-    \item axiological / deontic part. Perhaps list desiderata from ahlstrom, or taxonomy by Berker
-    \item What is the bearer of epistemic value? -> states of affairs
-\end{itemize}
+\subsubsection{ Taxonomy of the normative}
+“… a notion of how it would be best for the world to go, or of what would be best for particular people” \autocite[79]{scanlon1998}
+\subsubsection{ Intrinsic Value vs Extrinsic value }
+\subsubsection{ Instrumental Value vs. Final value }
+\subsubsection{ Good vs. right }
+\subsubsection{ value vs goal (can be footnote)}
+\subsubsection{ Why talk about value? To get an account of normativity, of course! }
+\subsubsection{ relation to the deontic: what does it mean for values to produce or guide or motivate or explain deontic norms? is justification inherently normative? reasons / rationality? }
+\subsubsection{ axiological / deontic part. Perhaps list desiderata from ahlstrom, or taxonomy by Berker}
 
-\subsection{What is Veritism?}
+\subsubsection{ What is the connection to the normative, exactly? Is it just justification, or can we „deduce“ actual NORMS from veritism? }
+\subsubsection{ If so, how plausible are they? Perhaps see Chisholm (quoted in \textcite{Goldman2002-GOLTUO-2})}
 
-\textcite[54]{Goldman2002-GOLTUO-2} defines veritism as  “... the unity if epistemic virtues in which the cardinal value, or underlying motif, is something like true, or accurate, belief”. Borrowing the terminology from Goldman, \textcite[360]{Berker2013-BERETA-2} proposes to label as veritism the position that „ ... our only epistemic goals are (i) the accumulation of true beliefs and (ii) the avoidance of false beliefs”. \textcite{Zagzebski2004-ZAGEVM-2} has a different name for a very similar position, what she calls epistemic value monism: “Any epistemic value other than the truth of a belief derives from the good of truth“. 
+\subsubsection{ Teleology / Consequentialism} \label{subsec: teleology}
+A theory of Normativity with a central value / central values as its fundamental principle.
+
+The guiding motivation behind painstakingly creating a theory of value is not to stop there an be done with it, of course, but instead developing it into a 
+full-fledged theory of normativity. Normativity includes the deontic as well, that is, the concepts of \emph{right}, \emph{reason}, \emph{rational}, \emph{ought} and so forth \autocite[21]{sep-value-theory}. Values and deontic norms are two central concepts in normative theory. Which of these two is the basic or fundamental one through which the other concept can be explained or derived is an ongoing debate and roughly divides normative theorists into two camps: consequentialists (or teleologists) and deontologists. 
+
+Consequentialists hold that all regulative norms usually phrased with \emph{oughts} and the like obtain in virtue of being directed at a value or goal. In slogan form, they put the good prior to the right. The basic idea is to first ask “what is the best (i.e. most valuable) action / belief / situation?” and then ask “what do I do to achieve it?” to arrive at what one \emph{ought} to do. 
+Deontologists hold that all evaluative norms obtain in virtue of being directed by a regulative norm. In slogan form, they put the right prior to the good. They start out with asking “what should I do?” and then determine the most valuable action / belief / situation on this grounds. 
+
+So the direction of explanation is reversed in these types theories, but instances of both types aspire to account for the \emph{good} as well as the \emph{right}, in other words, aspire to present a complete account of normativity \parencite[341]{Berker2013-BERETA-2}. This distinction is, as in most fields of philosophy, not as clear-cut as it might seem though, and there are theories that neither fall clearly on one side or the other of the divide and may incorporate features of the opposed theory.
+
+This is a very rough sketch of teleological / deontological accounts of normativity that leaves most everything to be desired, to be sure, but for my purposes it's enough give a quick overview what this distinction is all about.
+
+\subsubsection{Teleology / Consequentialism in Epistemology} \label{subsec: teleologyepistemic}
+
+\subsubsection{ What is the bearer of epistemic value? -> states of affairs}
+
+\subsection{Varieties of Veritism}\label{sec:varieties}
+
+\textcite[54]{Goldman2002-GOLTUO-2} defines veritism as  “... the unity if epistemic virtues in which the cardinal value, or underlying motif, is something like true, or accurate, belief”. Borrowing the terminology from Goldman, \textcite[360]{Berker2013-BERETA-2} proposes to define veritism as the position that „ ... our only epistemic goals are (i) the accumulation of true beliefs and (ii) the avoidance of false beliefs”. \textcite{Zagzebski2004-ZAGEVM-2} has a different name for a very similar position, what she calls epistemic value monism: “Any epistemic value other than the truth of a belief derives from the good of truth“. 
 
 The unifying theme of these quotes is apparent: What’s central to all three accounts clearly is the notion of \emph{true belief}. True, or accurate, belief has to be a value, goal, function or motif with a distinct role in the theory. This role is determined as cardinal, single, primary and non-derivative. In other words, veritism says that true belief has to be regarded as the only \emph{final} value. No other epistemic concept like knowledge or justification has final epistemic value. It is important to note, however, that this does \emph{not} entail that other epistemic concepts have \emph{no} epistemic value, they just don’t have \emph{final} epistemic value.
 
-\subsection{Simple Veritism}
-That, basically, is the gist of the position: veritism claims that true belief is the only epistemic value or goal. 
+So it is perfectly compatible with veritistic accounts to say that epistemic justification is valuable and that it has a value distinct from the value of true belief. Justification does not, however, have final or intrinsic epistemic value.
+
+\subsubsection{The Value of Believing}
+That is the gist of the position: veritism claims that true belief is the only epistemic value or goal. 
 
 \begin{description}
     \item[Simple Veritism:] True belief is the only state of affairs that has final epistemic value.
@@ -158,92 +170,154 @@ That, basically, is the gist of the position: veritism claims that true belief i
     \item add a comparative notion to it.
 \end{itemize}
 
-\subsection{How Plausible Is Simple Veritism?}
-
 Can this account explain intuition about scenarios concerning epistemic value?  A clear-cut case: two propositions $P$ and $Q$ where $P$ is true and $Q$ is false–it couldn't be more obvious: believing $P$ is more valuable than believing $Q$. This very natural thought directly leads to a comparative notion which holds that true belief is more valuable or better than false belief. Simple enough.
 
-Now what if we want to evaluate the doxastic system of a person, or her intellectual attainment, as \textcite[12]{Goldman2002-GOLTUO-2} puts it? This seems just as straightforward. The more true beliefs a person has, the more valuable the position that she occupies. So no matter the epistemic situation she am in, by acquiring more true beliefs she can better her epistemic standing. So far, so good.
+Now what if we want to evaluate the doxastic system of a person, or her intellectual attainment, as \textcite[58]{Goldman2002-GOLTUO-2} puts it? This seems just as straightforward. The more true beliefs a person has, the more valuable the position that she occupies. So no matter the epistemic situation she am in, by acquiring more true beliefs she can better her epistemic standing. So far, so good. Goldman\textcite[59]{Goldman2002-GOLTUO-2}
 
 All is not so peachy, though. Consider these two:
+\begin{description}
+    \item \emph{Gilbert Gullible} believes everything anyone tells tells him, anything he thinks about, in general any proposition he encounters.
+    \item \emph{Priscilla Precise} is more careful in forming her beliefs. She carefully weighs her evidence and, as a result, has a lot fewer beliefs than Gilbert, but her beliefs are largely true.
+\end{description}
 
-\emph{Gullible Gilbert} believes everything anyone tells tells him, anything he thinks about, in general any proposition he encounters.
-
-\emph{Precise Priscilla} is more careful in forming her beliefs. She carefully weighs her evidence and, as a result, has a lot fewer beliefs than Gilbert, but her beliefs are largely true.
-
-Intuitively, it is obvious that Priscilla occupies the more valuable epistemic state. Yet on the account just sketched, Gilbert amasses lots and lots of beliefs, among these many true beliefs. Hence his epistemic situation is immensely valuable. Priscilla on the other hand has fewer true beliefs to show for, her epistemic situation is therefore less valuable. This is a terrible result for the simple account.
+Intuitively\footnote{I make a lot of assumptions about intuitions here. Granted, this is not ideal, but I tried to only incorporate cases where the intuitions seem uncontroversial. As these are empirical claims, of course all of my assumptions about clear-cut intuitions are open to challenges from experimental philosophy.}, it is obvious that Priscilla occupies the more valuable epistemic state. Yet on the account just sketched, Gilbert amasses lots and lots of beliefs, among these many true beliefs. Hence his epistemic situation is immensely valuable. Priscilla on the other hand has fewer true beliefs to show for, her epistemic situation is therefore less valuable. This is a terrible result for the simple account.
 
 Gilbert’s situation is an instance of what \textcite[360]{Berker2013-BERETA-2} calls \emph{epistemic recklessness}. 
 
-\subsection{Dualistic Veritism}
-
-To avoid this result, it seems only natural to expand the epistemic goal to consist of to goals, really: ”...the twin goals of acquiring true beliefs and avoiding false ones“ \parencite[339]{Berker2013-BERETA-2}. This dualistic rendition of epistemic value has already been proposed by \textcite[17]{James1896-JAMTWT-19}, who coined the phrase: ”Believe truth! Shun error!“.
+To avoid this result, it seems only natural to expand the epistemic goal to consist of to goals, really: ”...the twin goals of acquiring true beliefs and avoiding false ones“ \textcite[339]{Berker2013-BERETA-2}. This dualistic rendition of epistemic value has already been proposed by \textcite[17]{James1896-JAMTWT-19}, who coined the phrase: ”Believe truth! Shun error!“.
 
 \begin{description}
-    \item[Dualistic Veritism] True belief and the avoidance of error are the only two states of affairs that have final epistemic value.
+    \item[Dualistic Veritism:] True belief and the avoidance of error are the only two states of affairs that have final epistemic value.
 \end{description}
+\label{SECTION SO UND SO}
+What does it mean to avoid error? An error in this sense \textcite[362]{Berker2013-BERETA-2} is a false belief. But in everyday language, disbelieves in true propositions are errors as well. I will discuss this complication later on \ref{SECTION SO UND SO}. What is avoidance, then? In a narrow reading, only disbelieving or suspension of judgment towards a false proposition count as avoiding errors. Interpreted more loosely, just being ignorant about a given proposition can count as avoidance, too. This relates to the criterion that determines which propositions actually contribute to the epistemic value, I will discuss it in \ref{SECTION SO UND SO}.
 
-This account fares better with respect to Gilbert and Priscilla. As Gilbert is in error quite often and thereby diminishes the value of his epistemic situation, Priscilla’s carefulness now brims with epistemic value. So this intuition, at least, can be explained. Splendid!
+So to maximize my epistemic value, I seek to have as many true beliefs and as few false beliefs as possible.
 
-\subsection{How Plausible Is Dualistic Veritism?}
+This account fares better with respect to Gilbert and Priscilla. As Gilbert does have some true beliefs that count towards a valuable position, Priscilla’s carefulness now brims with epistemic value as she avoids most of the errors that Gilbert makes. So this intuition, at least, can be explained. Splendid!
 
-But let's revisit one of the key merits of veritism at the core of any deontic framework. One central motivation is to unify all epistemic evaluation. This approach reaches as far back as Socrates, who proclaimed: ”Virtue is one!” and meant it quite literally \parencite{penner1973}, entailing that what Socrates regarded as virtues where really all the same thing. So bravery, wisdom, temperance, justice, piety and even knowledge amount to something equivalent, if not identical.
+But let's revisit one of the key merits of veritism at the core of any deontic framework. One central motivation is to unify all epistemic evaluation. This approach reaches as far back as Socrates, who proclaimed: ”Virtue is one!” and meant it quite literally \textcite{penner1973}, entailing that what Socrates regarded as virtues where really all the same thing. So bravery, wisdom, temperance, justice, piety and even knowledge amount to something equivalent, if not identical.
 \textcite{Goldman2002-GOLTUO-2} picks up the ball in his self-appointed task to unify all epistemic virtues\footnote{Now, virtues are not the same thing as values or goals, and I don't want to get into a discussion about virtue epistemology at all here. What Goldman concedes, though, is that his conception of epistemic virtues builds upon or at the very least is compatible with that form of consequentialism value-directed accounts present us with.}. As one might think, he is not so quick to drop value monism to make it two, that is to switch to a dualistic account, which would pretty much mean to give up the idea of a single unifying epistemic virtue.
 
-\subsection{Goldman's Accuracy Veritism}
-\textcite[58]{Goldman2002-GOLTUO-2} proposes an a little more complex form of veritism which takes its motivation from the model of partial belief, or degree of belief, or levels of confidence, or credences. Here, not mere true belief has final epistemic value but the value of a certain credence in a true proposition derives its value as a function of its degree: maximal value if the degree is maximal, and minimal value if the degree is minimal. This yields a slightly different comparative notion than before: A degree of belief in a true proposition is more valuable than another degree of belief simply if it is higher. Given a true proposition $P$, your credence of $0.9$ is more valuable than mine of $0.4$, simple as that.
+\textcite[58]{Goldman2002-GOLTUO-2} proposes an a little more complex form of veritism which takes its motivation from the model of partial belief, or degree of belief, or levels of confidence, or credences. Let's first get clear on the different notions of belief he employs:
+
+\begin{quote}
+    First, we can use the traditional classification scheme which offers three types of credal attitude toward a proposition: believe it, reject it (disbelieve it), or withhold judgment. I call this the trichotomous approach. Second, we can allow infinitely many degrees or strengths of belief, represented by any point in the unit interval (from zero to one). I call this scheme the degree of belief (DB) scheme. \textcite[88]{Goldman1999-GOLKIA}
+\end{quote}
+
+So nothing non-standard here. Note, that we want to account for each of the doxastic attitudes belief, disbelief and suspension of judgment.
+
+In the model of degree of beliefs, it is not mere true belief that has final epistemic value. Instead, the value of a credence in a true proposition derives its value as a function of its degree: maximal value if the degree is maximal, and minimal value if the degree is minimal. This yields a slightly different comparative notion than before: A degree of belief in a true proposition is more valuable than another degree of belief simply if it is higher. Given a true proposition $P$, your credence of $0.9$ is more valuable than mine of $0.4$, simple as that.
 Goldman then supposes a workable way to translate degrees of beliefs into full beliefs, suspension of belief, and disbelieve, by some threshold measure that is left unspecified. He can then compare: ”... believing a truth carries more veritistic value than suspension of judgment; and suspension of judgment carries more veritistic value than disbelief“. This leads to a comparative notion:
 
 \begin{quote}
-    If a person regularly has a high level of belief in the true propositions she considers or takes an interest in, then she qualifies as “well‐informed.” Someone with intermediate levels of belief on many such questions, amounting to “no opinion,” qualifies as uninformed, or ignorant. And someone who has very low levels of belief for true propositions—or, equivalently, high levels of belief for false propositions—is seriously misinformed. \parencite[12]{Goldman2002-GOLTUO-2}
+    If a person regularly has a high level of belief in the true propositions she considers or takes an interest in, then she qualifies as “well‐informed.” Someone with intermediate levels of belief on many such questions, amounting to “no opinion,” qualifies as uninformed, or ignorant. And someone who has very low levels of belief for true propositions—or, equivalently, high levels of belief for false propositions—is seriously misinformed. \textcite[58]{Goldman2002-GOLTUO-2}
 \end{quote}
 
-In this way, Goldman concludes, the veritistic account can accommodate for challenges that stipulate two epistemic goals instead of one. In particular, he claims that that having very low levels of belief for true propositions is \emph{equivalent} to having high level of belief in false propositions, at least insofar as the epistemic value is concerned. On this account, a credence of $0.2$ in a true proposition has the same epistemic value as a credence of $0.8$ in a false proposition, and both counts equally towards a person being  seriously misinformed. For Goldman, this notion of comparative value does justice to our intuitions regarding relevant cases.
+In this way, Goldman concludes, the veritistic account can accommodate everything an account with two epistemic goals instead of one can. In particular, he claims that that having very low levels of belief for true propositions is \emph{equivalent} to having high level of belief in false propositions, at least insofar as the epistemic value is concerned. On this account, a credence of $0.2$ in a true proposition has the same epistemic value as a credence of $0.8$ in a false proposition, and both counts equally towards a person being seriously misinformed. For Goldman, this notion of comparative value does justice to our intuitions regarding relevant cases.
 
-\subsubsection{How Plausible Is Goldman's Accuracy Veritism?}
+\begin{description}
+    \item[Accuracy Veritism:] Accurate belief is the only state of affairs that has final epistemic value.
+\end{description}
 
-However, as I see it, there are problems with this translation of conclusions drawn with the notion of degree of belief to the notion of full belief that Goldman does not seem to take into account.
+\subsubsection{The Value of Disbelieving}
 
-Goldman claims that disbelieving a proposition $P$ is equivalent to believing a proposition non-$P$, so that I disbelieve a proposition $P$ if and only if I believe a proposition non-$P$. That is, whenever it is true that i disbelieve $P$, it is also true that I believe non-$P$, and whenever it is false that i disbelieve $P$, it is also false that i believe non-$P$, and \emph{vice versa}. I presume this is a consequence from the translation of the notion of degree of beliefs to the notion of full beliefs. Given scaling of degree of beliefs on the unit interval, whenever I believe $P$ to the degree $c$, I also believe non-$P$ to the degree $1-c$.  For example: I am pretty unconvinced of $P$, my credence is $0.1$. Hence, my credence in non-$P$ is $0.9$. Translated back to full beliefs, this would then amount to belief and disbelieve, if $c$ is sufficiently high for full belief. So Goldman's claim about equivalence would follow. What shouldn't be disregarded, though, is that this only applies to agents that obey the axioms of probability theory, in many theories a necessary condition on rationality of degree of beliefs. It is still very much conceptually possible to believe $P$ to the degree $0.8$ \emph{and also} believe non-$P$ to the degree, say $0.7$. I wouldn't be quite rational to do so, of course, but it is certainly possible. Now, Goldman does not state conceptual identity, granted. Equivalence is still a very strong claim, but: my believing $P$ to the degree $c$ \emph{does not entail} my believing non-$P$ to the degree $1-c$ (or vice versa). Similarly, with full beliefs, I surely can disbelieve $P$ and also not believe non-$P$, that is, disbelieve non-$P$ or suspend judgment towards non-$P$. There is no entailment relation between either of these doxastic attitudes. Would it be so, I could never believe a direct contradiction, not only not rationally, but not with good reasons, either\footnote{As in the case of certain paradoxes, for example the liar paradox, as one might argue \textcite{Priest1998-PRIWIS}}.
+However, as I see it, there are problems with this translation of conclusions drawn with the notion of degree of belief to the notion of full belief that Goldman does not seem to take into account. It might be interesting to have a look at the notion of belief and disbelieve that Goldman employs, as it does a lot of work in explaining the value of the doxastic attitudes.
 
-Goldman could still retreat to the position that the \emph{epistemic value} of disbelieving $P$ is equivalent to the \emph{epistemic value} of believing non-$P$. Let's suppose $P$ is false, and hence non-$P$ true, then on this account, disbelieving $P$ has epistemic value–the corresponding credence is very close to the actual truth-value– and believing non-$P$ has value, since one believes a true proposition, namely non-$P$. So what can be accounted for is the dual value of disbelieving a falsehood and believing a truth. Consider the case:
+Goldman claims that disbelieving a proposition $P$ is equivalent to believing a proposition non-$P$ \textcite[58]{Goldman2002-GOLTUO-2}, so that I disbelieve a proposition $P$ if and only if I believe a proposition non-$P$. That is, whenever it is true that i disbelieve $P$, it is also true that I believe non-$P$, and whenever it is false that i disbelieve $P$, it is also false that i believe non-$P$, and \emph{vice versa}. I presume this is a consequence from the translation of the notion of degree of beliefs to the notion of full beliefs. Given scaling of degree of beliefs on the unit interval, whenever I believe $P$ to the degree $c$, I also believe non-$P$ to the degree $1-c$. For example: I am pretty unconvinced of $P$, my credence is $0.1$. Hence, my credence in non-$P$ is $0.9$. Translated back to full beliefs, this would then amount to belief and disbelieve, if $c$ is sufficiently low for disbelief. So Goldman's claim about equivalence would follow. What shouldn't be disregarded, though, is that this only applies to agents that obey the axioms of probability theory, in many theories a necessary condition on rationality of degree of beliefs. It is still very much conceptually possible to believe $P$ to the degree $0.8$ \emph{and also} believe non-$P$ to the degree, say $0.7$. I wouldn't be quite rational to do so, of course, but it is certainly possible. Now, Goldman does not state conceptual identity, granted. Equivalence is still a very strong claim, but: my believing $P$ to the degree $c$ \emph{does not entail} my believing non-$P$ to the degree $1-c$ (or vice versa). So, translated back to full beliefs, the equivalence of disbelieving that $P$ and believing that non-$P$ does not follow from the notion of degree of beliefs\footnote{The notion of translating between different models of belief formation is not self-explanatory and seems in need of an independent argument. Let's suppose, for the moment, that such a sufficient argument has been presented.}.
 
-\emph{Skeptical Stephanie} is in a very unfortunate situation. Her questionable colleagues all present her with unconvincing propositions. As a result, she comes to disbelieve most of them. And rightly so, all of them are false.
+One could object to this that this is not at all a move from degree of beliefs to full beliefs. Instead, is just very naturally follows from thinking about doxastic attitudes. What else should disbelieving $P$ amount to, if not believing that non-$P$? When I disbelieve $P$, I hold that $P$ is false. But believing that $P$ is false \emph{just is} believing that non-$P$ is true. The argument looks something like this:
 
-We intuitively want to say that Stephanie's disbeliefs contribute something epistemically valuable to her situation. Yet, on the simple account of veritism, I could only ascribe value to her disbeliefs if I presume the equivalence stated by Goldman, that
+\begin{enumerate}
+\item [P1] If I disbelieve that $P$, I believe that <$P$ is false>. 
+\item [P2] <$P$ is false> is equivalent to <non-$P$ is true>.
+\item [P3] Belief is closed under single premise logical entailment.
+\item [C1] If I disbelieve that $P$, I believe that <non-$P$ is true>. (From P1 to P3)
+\item [P4] Believing that <$Q$ is true> \emph{just is} to believe that $Q$.
+\item [C] Therefore, If I disbelieve that $P$ then I believe that believe that non-$P$. (From C1 and P4)
+\item [] (A similar argument may be sketched for the opposite direction of entailment.)
+\end{enumerate}
 
-How much hangs on this in Goldman's argument?
+But I would hold that I presumably can disbelieve $P$ and also not believe non-$P$, that is, disbelieve non-$P$ or suspend judgment towards non-$P$. There is no entailment relation between either of these doxastic attitudes. What goes wrong in the argument? P1 may just follow from your definition of disbelieve. I won't argue against that here, or ever, so this premise seems fine. P2 just is a necessary statement given that every Proposition is either true or false. P4 seems like a truism, although one might argue against it on grounds that a conception of truth or true belief is not necessary for a subject to hold true beliefs, however, let's grant this as well. P3, on the other hand, is the most dubious candidate. While it is a hot topic whether knowledge is closed under entailment\footnote{See, for example, \textcite{Dretske2005-DREIKC}.}, it is a lot less plausible that \emph{mere belief} is closed under (single premise) entailment. For I can, of course, believe that $P$, where it is some necessary truth that If $P$, then $Q$, but still fail to grasp that $Q$ obtains. Without this or a similar premise\footnote{Perhaps the premise that it is closed under \emph{obvious} single premise closure, but then, I think, the same counterexamples work.} the argument just isn't sound.
 
-- Claims that disbelieving a proposition p is equivalent to believing a proposition p. That is not correct. This comes from proabilistic accounts. given the plausible principle that for every proposition, one can have only one doxastic attitude at most towards it.
-Goldman claims that, in the case of full belief, disbelieving a proposition p is equivalent to believing a proposition p. Lets assume that
+So, I suggest that yes, of course, <$P$ is false> is equivalent to <non-$P$ is true>, however, disbelieving that $P$ is not equivalent to believing that non-$P$.
 
-- i suggest that the translation to a model of full belief does not work in all respects: A degree of belief of 0.5 is not the same a suspension of judgment, which does not entail a doxastic attitude towards a proposition \footnote{I owe this point to \textcite{Balg2018} }
+[The following is BS]
+Would it be so, I could never believe a direct contradiction, not only not rationally, but not with good reasons, either\footnote{As in the case of certain paradoxes, for example the liar paradox, as one might argue \textcite[415]{Priest1998-PRIWIS}}.
 
-- This Works for cases where we compare doxastic attidues over a given, fixed set of opinionated propositions.
+Goldman can still retreat to the position that the \emph{epistemic value} of disbelieving $P$ is equivalent to the \emph{epistemic value} of believing non-$P$. Let's suppose $P$ is false, and hence non-$P$ true, then on this account, disbelieving $P$ has epistemic value–the corresponding credence is very close to the actual truth value– and believing non-$P$ has value, since one believes a true proposition, namely non-$P$. So what can be accounted for is the dual value of disbelieving a falsehood and believing a truth. This position seems a lot more plausible, then. Perhaps it is what Goldman had in mind, anyway. What does it help veritism with? Consider the case:
 
-- This does NOT solve epistemic recklessness: he would need something like disvalue for false beliefs that take away from the overall value. given a simple additional model of value
+\begin{description}
+   \item \emph{Stephanie Skeptical} is in a very unfortunate situation. Her questionable colleagues all present her with unconvincing propositions. As a result, she comes to disbelieve most of them. And rightly so, all of them are false.
+\end{description}
+
+We intuitively want to say that Stephanie's disbeliefs contribute something epistemically valuable to her situation. Yet, on the simple account of veritism, I could only ascribe value to her disbeliefs if I presume the equivalence stated by Goldman, that her disbelief in the false proposition $P$ entails a believe in the true proposition non-$P$. On the dualistic account, her disbeliefs would count as an avoidance of error only if (a) the equivalence claim above is supposed true, or (b) error is meant to encompass disbelieve in false propositions as well. Option (a) would presuppose to much to be incorporated into the value directly, for my taste, whereas option (b) seems \emph{prima facie} to be a plausible candidate to deal with this problem, however, isn't emphasized that much in the literature.
+
+Goldman's accuracy account is partly designed to handle exactly this type of case. Stephanie's disbeliefs all have epistemic value equivalent to that of true beliefs. Hence, her epistemic situation is valuable, agreeing with intuition.
+
+\subsubsection{The Value of Suspending Judgment}
+
+What about suspension of judgment? Given a true proposition $P$, it is most valuable to belief that $P$. It seems less valuable to suspend judgment towards $P$, and it is even less valuable to disbelieve $P$. Conversely in the case of a false proposition $Q$: disbelieving is most valuable, suspension less so, and believing that $Q$ least valuable. Intuitively then, there is a clear ranking of these types of doxastic attitudes. On the simple account, none of the features of the ranking save true belief can be explained. The dualistic account with the above modification regarding error gets two out of three right, it does not say anything about suspension of judgment though. What should it count as? Is it some form of true-at-least-a-bit belief, or should it be regarded as an error? Neither of these seem plausible at all. So if we are to include suspension of judgment into our notion of doxastic attitudes, both the simple and the dualistic veritistic account can't seem to handle the intuitions regarding its value. The accuracy veritist is able to cope a lot better, as suspension is directly incorporated into the comparative notion that Goldman spelled out.
+
+However, there might still be a problem: [Insert Dominiks Argument here] i suggest that the translation to a model of full belief does not work in all respects: A degree of belief of 0.5 is not the same a suspension of judgment, which does not entail a doxastic attitude towards a proposition \footnote{I owe this point to \textcite{Balg2018} }
+
+So far, it seems that accuracy veritism comes out on top, at least if we only consider cases in which there is a fixed set of propositions against which we evaluate different intellectual attainments. Consider again the case of Gilbert and Priscilla: Gilbert is right quite often, but wrong even more often. Priscilla is right in most of her beliefs, but has fewer of them, so is not right as often as Gilbert is. On Goldman's account then, one accumulates epistemic value by believing truths and disbelieving falsehoods, but also by suspending judgment, regardless of the truth value of the proposition. Isn't it still the case that Gilbert accumulates more value by believing all those true propositions? He accumulates a lot, that much is correct, but reading Goldman charitably we might ascribe to Priscilla that she withholds judgments in many of the cases which Gilbert gets wrong. Thus, she accumulates lots of additional value by being indecisive. I would concede that this point is controversial, for it is not the same thing to withhold judgment and to be ignorant about a proposition. Being ignorant does not promote any epistemic value, and isn't Priscilla ignorant about those proposition, really? Whatever the answer, one might object that there is a slight alteration to the Gilbert and Priscilla case that might pose a new problem. Consider:
+
+\begin{description}
+    \item \emph{Hesitant Howard} is too indecisive to belief most anything, he withholds judgment on every single proposition he is not perfectly sure of. And he is almost never sure of anything! As a result, most (if not all) of his doxastic attitudes are suspensions of judgment.
+\end{description}
+
+Of course, Howard is not in an epistemically notably valuable position. And his situation certainly is not better than that of Priscilla. But doesn't the accuracy account produce the verdict that Howard's situation is more valuable, given that he accumulates value for each suspension of judgment, while Priscilla doesn't? The response is analogous to the previous case. If Priscilla is ignorant or without doxastic attitude towards most of the propositions that Howard withholds judgment on, the accuracy account might produce the verdict that Howard accumulates more epistemic value than Priscilla does. If we grant, however, that Priscilla herself suspends judgment on these propositions, then her overall positive track-record will give her a slight to large edge over Howard and therefore make the account's verdict agree with intuition.
+
+If we stipulate, though, that Priscilla has doxastic attitudes towards a given limited set of propositions, but which are mostly accurate, whereas Howard's set of proposition he withholds judgment on is significantly larger, the accuracy account would value Howard's situation as the more epistemically valuable. I argue that these cases in which the set of propositions in question differ in such a significant way may yield less clear intuitions about the epistemic value. Intuitively, there might be something of value in the mere range of propositions that Howard is familiar with, and even though he is not knowledgeable about most of them, just having this many doxastic attitudes may count some way towards epistemic value.
+
+I would propose to set aside such edge cases and predominantly compare epistemic situations on opinionated, fixed or comparably-sized sets of propositions–doxastic attitudes are, after all, what we want to compare the value of.
+
+\subsubsection{Summary}
+
+In this section, I present simple and straightforward forms of spelling out what a veritist account of epistemic value might look like, and compare their verdicts against intuitions about epistemic value in ready-made and non-obscure cases. I then evaluate which, if any, of the presented accounts seem plausible enough on this first challenge to then be incorporated into a theory of epistemic normativity. It becomes apparent that getting clear on what it is, exactly, that veritism states, is not as straightforward as one might think. Simple veritism can't accommodate the value of disbelieving a false proposition. Dualistic veritism has problems explaining intuitions about the value of suspending judgment. Accuracy veritism is not able to properly explain intuitions about comparing the value of wildly diverging sets of beliefs, however, that problem might not be of so much import after all.
+
+To make headway, I propose to accept the account of accuracy veritism for the time being as a predominantly plausible one. To avoid complications, I will still talk of veritism as employing true belief as the only final epistemic value with the notion of accuracy in mind.
+
+Next, [what is next?]
+
+\subsection{Veritism and Other Accounts}
+
+Veritism proposes that true belief is the only final epistemic value. This would not be saying much if there were not different accounts of value that try to explain epistemic normativity from a different starting point. In this section, I will outline some of them and give an overview of the different accounts in use in contemporary normative epistemology.
+
+\subsubsection{ (epistemic value vs practical value)}
+\subsubsection{ (how does it relate to the deontic? What does that mean, deontic epistemology? (Steup?))}
+
+\subsubsection{ Truth Value Monism }
+I stated in section \ref{sec:varieties} that \textcite[191]{Zagzebski2004-ZAGEVM-2} has a different name for a very similar position to veritism: epistemic value monism. I will label this position \emph{truth value monism}, however, since epistemic value monism seems to be somewhat of a misnomer for the position that Zagzebski sketches: “Any epistemic value other than the truth of a belief derives from the good of truth.” Although this is a case of epistemic value monism, that is, a position that stipulates a single final epistemic value, other positions may also stipulate a single final epistemic value, most naturally knowledge, and thereby classify as epistemic value monism. So the term is ambiguous, hence truth value monism.
+Is truth value monism the same as veritism? In section \ref{sec:varieties} is presented different renditions of what veritism might amount to, one of these simply stating truth as the final epistemic value. The other versions may still classify as truth value monism, depending on how tight you want to draw the concept, but i think the label veritism with the various addendums such as \emph{dualistic} much more appropriate as working name, so that is what I am going to use.
+Terminology out of the way, I can concentrate on what reasons there are to endorse veritism as a theory.
 
 
+What speaks in favor of truth value monism? It is very intuitive, perhaps.
 
-In the application of this account to full belief Goldman makes two assumptions that in my eyes do not do the work he expects them to do. First, Goldman makes the claim that disbelieving a proposition is equivalent to believing the proposition non-$p$. He doesn't claim identity, which would not make much sense, since these two are obviously different things. Yet he claims equivalence to the effect that believing $p$ can't occur without simultaneously also disbelieving non-$p$. This seems to be a consequence from the application of the credence-based approach, in the following way: Given my credence in $p$ of, say, $0.9$, 
-% subsection subsection_name (end)
+- Explains accuracy accounts of formal epistemology
+- Makes different doxastic attitudes comparable to on another, does not impose incommensurability problems
+- 
 
-\begin{itemize}
-    \item epistemic value vs practical value
-    \item how does it relate to the deontic? What does that mean, deontic epistemology? (Steup?)
-    \item Truth-Value-Monism / Veritism. The same? List different definitions. Goldman / Berker / Zagzebski 
-    \item Truth-Value-Monism vs. Pluralism about values 
-    \item Other-Value-Monisms (Knowledge, ...) 
-    \item TVM vs. Non-Value-based accounts of normativity 
+
+    \subsubsection{ Truth-Value-Monism vs. Pluralism about values }
+    \subsubsection{ Other-Value-Monisms (Knowledge, ...) }
+    Veritist propose truth as the only epistemic goal. But why is that so? Woulnd't other candidates be a lot more plausible? After all, this is epistemology, and not alethology, or something like that.
+
+\section{Veritism and Epistemic Normativity}
+    \subsubsection{ TVM vs. Non-Value-based accounts of normativity }
     Deontological account of justification has the problem of explaining intuitions of the form you should believe it because its most likely to be true!
 
     Deontological accounts also need to provide an explanation for the problems posed by a false doxastic voluntarism and ought-implies-can. Veritism gets evaluative notions for free! Docastic voluntarism still is a problem for deontic requirements, though. Strategies: Flat-out deny deontic (regulative) requirements, or adopt one of the deontological accounts position and distinguish between different forms of doxastic voluntarism or deny ought-implies-can in one of its different forms. (Perhaps) we'll see later what these strategies exactly amount to .
-    \item Why \emph{truth} as a value? What are the advantages? Maybe already bring on Joyce's accuracy argument for probabilism 
-    \item Why only relevant truths? What is with the reduction to just interesting truths? Is it necessary, helpful? 
-\end{itemize}
+    \subsubsection{ Why \emph{truth} as a value? What are the advantages? Maybe already bring on Joyce's accuracy argument for probabilism }
 
-\subsection{Problems for the Veritistic account}
-\begin{itemize}
-    \item Objection from significance - Some true beliefs seem more valuable than other true beliefs.
+
+    \subsubsection{ Why only relevant truths? What is with the reduction to just interesting truths? Is it necessary, helpful? }
+
+\subsection{Objection from Significance}
+    \subsubsection{ The content of the epistemic goal: An ideal state.}
+    \subsubsection{ Objection from significance - Some true beliefs seem more valuable than other true beliefs.}
 
     Compare these two beliefs:
     \begin{enumerate}
@@ -256,36 +330,48 @@ In the application of this account to full belief Goldman makes two assumptions 
     Moreover, it might even explain why justified belief is more valuable than mere true belief. Does it? How? Somehow the modal stability adds to the information contained? That seems a little far fetched but perhaps its worth a try. 
     What it DOES do is take the reek of practical value that comes with interest and significance! Argh! We veritists want delicious, pure epistemic value. If it is possible to define information in a way that it does not pertain to any practical evaluation and can be evaluated in epistemic terms only, its an account of significance or interest of true beliefs that is purely epistemic.
 
-    \item Value Problem aka Meno Problem aka Swamping Problem (Show differences). Explain what it is and why it hurts veritism 
-    \item Discuss how it could be solved in combination with accounts of justification (for example reliabilism) see Goldman/Olsson
-    \item Own Discussion of a solution (perhaps from modal stability)
-    \item The solution? Is there a solution without reliabilism, i.e. generic?
-\end{itemize}
-\begin{itemize}
-    \item Problems that \textcite{Berker2013-BERETA-2} raises
-    \item Answers that Goldman gives
-    \item This does not solve the problem for the veritist in general. Even without deontic definition, this problem arises(?)
-    \item Berker divides consequentialist theories in three parts: theory of final value, theory of overall value, and a deontic theory, as opposed to just divide into axiological and deontological considerations. 
-    \item Explain IN DETAIL what this means. 
-    \item For all (most) consequentialist theories a problem arises with firth-style cases. 
-    \item Explain IN DETAIL what these cases are, what and how the problem arises for the consequentialist theories
-    \item Explain shortly what the reliabilist (i.e.) Goldman replies.  
-\end{itemize}
 
-\section{Epistemic Normativity}
+\subsection{The Value Problem}
 
-\begin{itemize}
-    \item What is the connection to the normative, exactly? Is it just justification, or can we „deduce“ actual NORMS from veritism? 
-    \item If so, how plausible are they? Perhaps see Chisholm (quoted in \textcite{Goldman2002-GOLTUO-2})
-\end{itemize}
+One fundamental premise of the argument is that knowledge is more valuable than truth. Or more specifically, that the situation in which S knows that $P$ has more value than a situation in which S merely truely beliefs that $p$. As argued by \textcite[35-38]{grundmann2008} in fregean spirit, the truth of a belief is a property of the belief provided by its propositional content. Since a belief can only have one particular propositional content, the truth value of the proposition it is expressing is its sole source of direct value. Knowledge, on the other hand, does not seem to be a mere property of belief. Knowing that $P$ entails something else than just to have some belief that has the property of \emph{qualifying as knowledge}, or however you want to call it. Knowledge is a complex composite with one of its components being true belief\footnote{Of course, this is a highly controversial claim, argued against by many, most prominently by \textcite{Williamson2000-WILKAI}}. On one of the more plausible conception of knowledge compatible with process reliabilism and hence veritism called safety, a necessary condition for S to know that $P$ is that in each of the nearby relevant worlds, If S believes that $P$, $P$ is true. Bracketing out what is meant by \emph{relevant} and \emph{nearby}, what strikes me as uncontroversial is that the truth of $P$ in other possible worlds can't be plausibly said to constitute properties of the belief that $P$. Instead, it is something else (whatever it is), that in conjunction with the true belief that $P$ instantiates knowledge. So when asking if knowledge is more valuable than true belief, instead of evaluating just the belief and its properties one needs to evaluate this
+
+against \textcite[291]{Stapleford2016}:
+
+The epistemic domain is defined by the concept of knowledge. The concept is complex and it corre- sponds not to a single fundamental value but to a configuration of values, one fundamental and one (or more) derivative. Epistemic value is best thought of as a hybrid comprising the fundamental value of truth and the derivative value of justification.24 If this is right, then the objection misses the mark. Just as an authenticated painting has no more aesthetic value than an unauthenticated one, a justified true belief has no more alethic value than an unjustified true belief. But it does have more epistemic value.
+
+This is incompatible with veritism according to with true belief is the only fundamental epistemic value. In Staplefords account, it would only be the only fundamental alethic value. The hybrid comprising truth and justification is of fundamental epistemic value, and truth has epistemic value only derivatively, just as justification only has epistmic and althic value derivatively.
+
+With \textcite{Stapleford2016}:
+To see how justification secures true belief against loss, con- sider what it’s like to believe P truly without justification. Suppose that you believe P because P was suggested to you when you were drunk and it seemed like fun at the time.29 This leaves your belief that P particularly susceptible to non-evidential influences and thus liable to random fluctuation. Say we try to coax you out of it: ‘Hey, we all believe not-P. Why don’t you? P sucks!’ If you didn’t have any good reason for believing P in the first place – if you just took it on a whim – then you have no good reason to stick with it now. You can drop P without a second thought. Whereas if you believe P with justification, you’ll think: ‘Why should I do that? P seems to be true. I am justified in keeping it.’ Justification thus gives your belief that P an added layer of protection against inad- vertent or arbitrary loss.
+
+This seems to be a reasonable approach to stability of belief.
+
+
+\subsubsection{ Value Problem aka Meno Problem aka Swamping Problem (Show differences). Explain what it is and why it hurts veritism }
+\subsubsection{ Discuss how it could be solved in combination with accounts of justification (for example reliabilism) see Goldman/Olsson}
+\subsubsection{ Own Discussion of a solution (perhaps from modal stability)}
+\subsubsection{ The solution? Is there a solution without reliabilism, i.e. generic?}
+
+
+\subsection{The Berker/Goldman debate on veritism}
+
+\subsubsection{ Problems that \textcite{Berker2013-BERETA-2} raises}
+\subsubsection{ Answers that Goldman gives}
+\subsubsection{ This does not solve the problem for the veritist in general. Even without deontic definition, this problem arises(?)}
+\subsubsection{ Berker divides consequentialist theories in three parts: theory of final value, theory of overall value, and a deontic theory, as opposed to just }divide into axiological and deontological considerations. 
+\subsubsection{ Explain IN DETAIL what this means. }
+\subsubsection{ For all (most) consequentialist theories a problem arises with firth-style cases. }
+\subsubsection{ Explain IN DETAIL what these cases are, what and how the problem arises for the consequentialist theories}
+\subsubsection{ Explain shortly what the reliabilist (i.e.) Goldman replies.  }
 
 What is the exact distinction between Values, or goals, in general, and merely epistemic values, or goals? Epistemic Values pertain to something like Knowledge, Justification and Truth. But is that something that is really there or just some conventional means to divide and conquer the problem? Speaking from an evolutionary standpoint, it seems likely that we as humans are fitted with a natural goal of believing what maximizes our chances of survival. In most (if not all) cases, this goal coincides with believing what is true. But conceptually, these two are not the same. There may be cases where it would be best from a survival perspective, to believe that there is a predator in the surroundings, even when there is not, and so to believe falsely. So to purport the actual, final value of beliefs as being true seems, if nor fat-fetched, at least somewhat artificial. It is a very useful distinction, however, as the epistemologist can free her reasoning from any practical considerations that would otherwise be still on the table. However, if artificial, it might also not be what guides our intuitions about thought experiments. These intuitions may not share this artificial division of goals and subsume even epistemic evaluation under some, probably more practical, goals. I hold that these or some other not merely epistemic intuitions are what guides our evaluation in some cases. Consider a standard reply to a truth norm of the form: One should believe $p$ if and only if $p$ is true. This has the obvious consequence that one is required to believe every true proposition, no matter how menial or irrelevant to my current PRACTICAL purposes. I maintain that this relevance or interest is mostly practically motivated and hence should not be a part of any purely epistemic evaluation of the belief. From this perspective, every comparable true belief is comparably valuable in the epistemic sense. With comparable belief I mean beliefs that somehow have a similar epistemic status. They are of comparable generality and content. There may be differences in epistemic value, however, between a belief that is a very general (and true) law of nature and
 
 Objection: 
 
-\nocite{sep-value-theory,Goldman2002-GOLTUO-2,James1896-JAMTWT-19,James1907-JAMP,Zagzebski2004-ZAGEVM-2,Berker2013-BERETA-2,Berker2013-BERTRO-24,Goldman2015-GOLRVA,Berker2015-BERRTG-2}
-
+The case intuition seems uncontroversial, however, it has also been empirically corroborated \textcite{Andow2016}
 \section{Conclusion}
+
+\nocite{*}
 
 \printbibliography
 
