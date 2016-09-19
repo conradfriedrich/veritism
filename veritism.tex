@@ -10,6 +10,8 @@
 
 \usepackage[authordate, ibidtracker=context]{biblatex-chicago}
 \addbibresource{veritism.bib}
+\usepackage{url}
+\urlstyle{same}
 
 % \usepackage[square]{natbib}
 % \usepackage{jurabib}
@@ -45,16 +47,17 @@
 
 
 \subject{}
-\title { Veritism and Epistemic Normativity }
+\title {    \begin{center}
+        \includegraphics[scale=0.5]{philfak.jpg}
+    \end{center}
+     Veritism and Epistemic Normativity }
 \author{C. Friedrich}
 \date{\today}
 
 \publishers{ University of Cologne \\
     Department of Philosophy \\
     Bachelor Thesis \\
-    \begin{center}
-        \includegraphics[scale=0.5]{philfak.jpg}
-    \end{center}
+
 }
 
 \makeatletter
@@ -129,7 +132,7 @@ I divide normativity roughly into axiology, the study of values, and deontology,
 
 Any account of normativity aspires to explain the axiological and deontological questions. The tension between different types those theories will be of some import for the present paper, and I will circle back to this topic frequently.
 
-\subsection{ Values explained }
+\subsection{ Values }
 What \emph{is} a value, then? \textcite[79]{scanlon1998} puts it thusly: “ ... a notion of how it would be best for the world to go, or of what would be best for particular people”. In addition, it is what makes evaluative sentences like “pleasure is good” come out (perhaps) true. There is something that corresponds to these sentences, for instance a property of pleasure, that gives “pleasure is good“ a status as a true sentence. Since axiology is defined above in terms of claims of the form “pleasure is good” this approach seems alarmingly circular. It is such a simple and perhaps primitive notion. What's left is the appeal to intuition–certain things are intuitively good, or are better than others. That's what \emph{value} refers to.
 
 - value come in degrees
@@ -139,10 +142,6 @@ What \emph{is} a value, then? \textcite[79]{scanlon1998} puts it thusly: “ ...
 \subsection{ Good vs. right }
 \subsection{ value vs goal (can be footnote)}
 \subsection{ Why talk about value? To get an account of normativity, of course! }
-\subsection{ relation to the deontic: what does it mean for values to produce or guide or motivate or explain deontic norms? is justification inherently normative? reasons / rationality? }
-\subsection{ axiological / deontic part. Perhaps list desiderata from ahlstrom, or taxonomy by Berker}
-
-\subsection{ If so, how plausible are they? Perhaps see Chisholm (quoted in \textcite{Goldman2002-GOLTUO-2})}
 
 \subsection{ Teleology / Consequentialism} \label{subsec: teleology}
 A theory of Normativity with a central value / central values as its fundamental principle.
@@ -160,7 +159,7 @@ This is a very rough sketch of teleological / deontological accounts of normativ
 
 \subsection{Epistemic Normativity} \label{subsec: epistemic}
 
-Veritism then is a theory about value, so in that sense it determines the questions regarding axiology in a normative framework. To be compatible with veritism, a deontic theory has to accept that the only fundamental epistemic value is truth or true belief. Veritism combined with such a deontic theory amounts to a teleologist or consequentialist account of epistemic normativity in which deontic concepts are explained by appeal to veritism.
+Veritism is a theory about value, so in that sense it determines the questions regarding axiology in a normative framework. To be compatible with veritism, a deontic theory has to accept that the only fundamental epistemic value is truth or true belief. Veritism combined with such a deontic theory amounts to a teleologist or consequentialist account of epistemic normativity in which deontic concepts are explained by appeal to veritism.
 
 The discussion of the normative has been quite general so far, in order to be compatible with ethics as well as epistemology. Veritism is an epistemological position, so what does that mean for normative theories about it? Most of what has been said translates directly into the \emph{epistemic domain}, meaning anything that pertains to concepts like belief, truth, knowledge and justification \autocite{David2001-DAVTAT-7}. Even \textcite[7]{grundmann2008}, who holds that conceptual analysis in epistemology precedes the normative inquiry, emphasizes the normative character of justification, one of \emph{the} central concepts in epistemology \autocite[226]{grundmann2008}. Still more prevalent is the connection of epistemological concepts to the normative in the \emph{deontic conception of epistemic justification}, presented by \textcite{Steup1988-STETDC} and argued against by \textcite{Alston1988-ALSTDC}. The deontic conception states that epistemic justification can be “cashed out“ out in terms of permissions, obligations and so forth. This goes one step beyond the claim of Grundmann, who merely notes the evaluative normative character of epistemic justification.
 
@@ -179,10 +178,9 @@ On many accounts[citation?], (2) is the preferred strategy, as is grants an impo
 
 Note that neither of both approaches is necessarily stuck to the position that there can only be evaluative or only regulative norms. This is a different question which will be addressed later on (-> ref!).
 
-- Where does the normative force of values come from?
 \subsubsection{How Can Veritism Ground Epistemic Normativity?}
 
-It is perhaps not obvious why it is that, given veritism, regulative norms of belief have any normative force. In virtue of what are these norms authoritative? It may be that true beliefs are good, or valuable, but why should that require me, as a believer, to follow norms given provided by veritism? This problem is especially salient when stating that beliefs have a constitutive aim of being true, as \textcite{Cote-BouchardForthcoming-CTBCTA} points out. His challenge goes something like this: Suppose that there is a true evaluative norm of belief, of the form
+It is perhaps not obvious why it is that, given veritism, regulative norms of belief have any normative force. How is the normative force grounded in veritism? In virtue of what are these norms authoritative? It may be that true beliefs are good, or valuable, but why should that require me, as a believer, to follow norms given provided by veritism? This problem is especially salient when additionally stating that beliefs have a constitutive aim of being true, as \textcite{Cote-BouchardForthcoming-CTBCTA} points out. His challenge goes something like this: Suppose that there is a true evaluative norm of belief, of the form
 \begin{description}
     \item[TN] A belief is correct if and only if it is true. \autocite{Wedgwood2002-WEDTAO}
 \end{description}
@@ -199,11 +197,8 @@ One objection that springs to mind is that there is a role-ought that applies he
 However, what has to be addressed here is that the role of a believer is aimed at a good thing, at something valuable. That is what veritism states, after all. The \emph{combination} of these claims makes all the difference: any epistemologically relevant subject is in the position that (i) she is in the role of a believer (ii) this is necessarily and not only contingently so and (iii) only true belief is good belief. What Cote-Bouchard has shown is that neither of these conditions alone is sufficient to justify RTN. But as a believer TN applies to me, hence I have good reasons to believe correctly \emph{qua believer}. Since I'm necessarily in the role of a believer, and believing correctly is a good thing (as stated in veritism), I necessarily have a good reason to believe correctly.
 
 If this objection works, it lifts the normativity of belief \emph{out} of the merely epistemic domain. So I do not merely have an epistemic reason, but a good reason, \emph{simpliciter}
-\footnote{This does not amount to all-things-considered reason, however, as there might be other, heftier reasons that outweigh my good reason derived from truth. This, though, is another contentious topic, and some hold the position that only epistemic reasons can give me a reason to belief anything \autocite{Kelly2003-KELERA}}. But not much hangs on this claim for the purposes of this paper, since for epistemic normativity to be relevant, it is enough to just apply to the domain of normativity. This question becomes relevant again as soon as one tries to compare epistemic (or intellectual) reasons with practical (or other minds of)reasons to determine an all-things-considered reason. That is not the target of this paper, though. If this in fact is only a hypothetical norm, given my role as a believer, so be it.
-
-
-
-
+\footnote{This does not amount to all-things-considered reason, however, as there might be other, heftier reasons that outweigh my good reason derived from truth. This, though, is another contentious topic, and some hold the position that only epistemic reasons can give me a reason to belief anything \autocite{Kelly2003-KELERA}}.
+But not much hangs on this claim for the purposes of this paper, since for epistemic normativity to be relevant, it is enough to just apply to the domain of normativity. This question becomes relevant again as soon as one tries to compare epistemic (or intellectual) reasons with practical (or other minds of)reasons to determine an all-things-considered reason. That is not the target of this paper, though. If this norm is in fact  only hypothetical on my role as a believer–so be it.
 
 \subsection{ What is the bearer of epistemic value? -> states of affairs}
 
@@ -217,7 +212,7 @@ The unifying theme of these quotes is apparent: What’s central to all three ac
 So it is perfectly compatible with veritistic accounts to say that epistemic justification is valuable and that it has a value distinct from the value of true belief. Justification does not, however, have final or intrinsic epistemic value.
 
 \subsubsection{The Value of Believing}
-That is the gist of the position: veritism claims that true belief is the only epistemic value or goal. 
+That is the gist of the position: veritism claims that true belief is the only epistemic value or goal. In some sense it is an ontological claim about the domain of epistemology: Veritist describe the property of value to true beliefs, or the existence of of a unifying goal for all believers. It is somewhat removed from psychological considerations, but that was to be expected, given this inquiry into the normative.
 
 \begin{description}
     \item[Simple Veritism:] True belief is the only state of affairs that has final epistemic value.
@@ -293,8 +288,9 @@ One could object to this that this is not at all a move from degree of beliefs t
 \item [C1] If I disbelieve that $P$, I believe that <non-$P$ is true>. (From P1 to P3)
 \item [P4] Believing that <$Q$ is true> \emph{just is} to believe that $Q$.
 \item [C] Therefore, If I disbelieve that $P$ then I believe that believe that non-$P$. (From C1 and P4)
-\item [] (A similar argument may be sketched for the opposite direction of entailment.)
 \end{enumerate}
+
+A similar argument may be sketched for the opposite direction of entailment.
 
 But I would hold that I presumably can disbelieve $P$ and also not believe non-$P$, that is, disbelieve non-$P$ or suspend judgment towards non-$P$. There is no entailment relation between either of these doxastic attitudes. What goes wrong in the argument? P1 may just follow from your definition of disbelieve. I won't argue against that here, or ever, so this premise seems fine. P2 just is a necessary statement given that every Proposition is either true or false. P4 seems like a truism, although one might argue against it on grounds that a conception of truth or true belief is not necessary for a subject to hold true beliefs, however, let's grant this as well. P3, on the other hand, is the most dubious candidate. While it is a hot topic whether knowledge is closed under entailment\footnote{See, for example, \textcite{Dretske2005-DREIKC}.}, it is a lot less plausible that \emph{mere belief} is closed under (single premise) entailment. For I can, of course, believe that $P$, where it is some necessary truth that If $P$, then $Q$, but still fail to grasp that $Q$ obtains. Without this or a similar premise\footnote{Perhaps the premise that it is closed under \emph{obvious} single premise closure, but then, I think, the same counterexamples work.} the argument just isn't sound.
 
@@ -343,22 +339,18 @@ Next, [what is next?]
 
 Veritism proposes that true belief is the only final epistemic value. This would not be saying much if there were not different accounts of value that try to explain epistemic normativity from a different starting point. In this section, I will outline some of them and give an overview of the different accounts in use in contemporary normative epistemology.
 
-\subsubsection{ (epistemic value vs practical value)}
-\subsubsection{ (how does it relate to the deontic? What does that mean, deontic epistemology? (Steup?))}
-
 \subsubsection{ Truth Value Monism }
 I stated in section \ref{sec:varieties} that \textcite[191]{Zagzebski2004-ZAGEVM-2} has a different name for a very similar position to veritism: epistemic value monism. I will label this position \emph{truth value monism}, however, since epistemic value monism seems to be somewhat of a misnomer for the position that Zagzebski sketches: “Any epistemic value other than the truth of a belief derives from the good of truth.” Although this is a case of epistemic value monism, that is, a position that stipulates a single final epistemic value, other positions may also stipulate a single final epistemic value, most naturally knowledge, and thereby classify as epistemic value monism. So the term is ambiguous, hence truth value monism.
-Is truth value monism the same as veritism? In section \ref{sec:varieties} is presented different renditions of what veritism might amount to, one of these simply stating truth as the final epistemic value. The other versions may still classify as truth value monism, depending on how tight you want to draw the concept, but i think the label veritism with the various addendums such as \emph{dualistic} much more appropriate as working name, so that is what I am going to use.
+Is truth value monism the same as veritism? In section \ref{sec:varieties} is presented different renditions of what veritism might amount to, one of these simply stating truth as the final epistemic value. The other versions may still classify as truth value monism, depending on how tight you want to draw the concept, but i think the label veritism with the various addenda such as \emph{dualistic} much more appropriate as working name, so that is what I am going to use.
 Terminology out of the way, Let's see what reasons there are to endorse veritism as a theory.
 
+First, it is a most natural notion. It is not controversial at all to say that truth is valuable one way or the other, or that having a true belief about some matter is better than having a false belief about that matter. This much is conceded by pluralist notions as well a other epistemic value monism, such as a knowledge-first account, even if in the latter case true belief would be valuable only derivatively. This much is even conceded by deontic conceptions of epistemic normativity, which grant that there is value to true belief, but that true belief derives it value trough norm-compliance. The concept is so natural in fact, that some even argued that belief constitutively aims at the truth \autocite{Shah2003-SHAHTG,Velleman2000-VELOTA}. To say that much is not necessary for a veritist position, however.
 
-What speaks in favor of truth value monism? It is very intuitive, perhaps.
+Secondly, veritism packs a bunch of explanatory power. To see this, consider a very successful theory in traditional epistemology: process reliabilism. This theory is, as Goldman point out, consequentialist in nature \autocite{Goldman2002-GOLTUO-2} employing veritism as axiological groundwork. I discuss extensively that this is not without problems in section (REF->). But even in formal epistemology, veritism has explanatory power and can help vindicate Bayesianism, or so at least \textcite{Joyce2009-JOYAAC} proposes. Trying to vindicate probabilistic coherence has long mostly been a project taking its argumentative force from pragmatic considerations such as intuitions about pragmatic betting behavior. Setting it on alethic foundations, as Joyce puts it, is to present a purely epistemic argument for probabilistic coherence. He then goes on to assume Accuracy of degrees of belief as the epistemic value, which is quite strikingly a veritist variant.
 
-- Most natural notion. Everyone agrees that Truth is valuable is some way or other, and that having a true belief about some matter is better than having a false belief. even deontic conceptions agree, yet those explain value in terms of the deontic. It is so natural, in fact, that some have proposed that something similar amounts to an analytic truth: Beliefs constitutively aims at truth \autocite{Shah2003-SHAHTG,Velleman2000-VELOTA}.
-- Explanatory power: It is possible to derive a whole normative framwork without much sweat from this very simple theory. Although not without problems, as I discuss extensively later on -> ref!
-- Parsimony: Given two theories of similar explanatory power, the one with fewer assumptions about the world seems preferable. Now, how can you get more parsimonious than with just stipulating a single value! Whoohoo!
-- Explains accuracy accounts of formal epistemology
-- Makes different doxastic attitudes comparable to on another, does not impose incommensurability problems
+Thirdly, it may be argued that parsimony is a veritable virtue of explanatory theories \footnote{In fact, \textcite[342]{Ahlstrom-Vij2013} posit some key desiderata for a satisficing epistemic axiology, chiefly among them a requirement for parsimony. They argue for it on the grounds that “one should prefer ontologies with fewer rather than more existential commitments, \emph{ceteris paribus}” \autocite{Ahlstrom-Vij2013}. This means that when comparing two theories with similar attractive features then, other things being equal, one ought to choose the theory with the fewer different entities assumed existing as possible. This intuitive principle in philosophy and the sciences was already proposed by Aristotle, Kant, Newton, Einstein, and Lewis among many \autocite[3]{sep-simplicity} and has its most famous philosophical realization in Occam's Razor, which can be stated as “other things being equal, if $T_1$ is more ontologically parsimonious than $T_2$ then it is rational to prefer $T_1$ to $T_2$” \autocite[7]{sep-simplicity}. Arguments for it range from just stating that parsimony is a primitive value over analyzing the quality of actual empirical theories vis-à-vis parsimony to probabilistic arguments showing that rational agents assign distinctive prior probabilities to simpler laws \autocite[11-26]{sep-simplicity}. For the purposes of this paper I take it to be sufficient to assume this quite plausible principle without going any deeper into this discussion.},
+and stating just one single epistemic value to explain all of epistemic normativity is of course quite parsimonious.
+Forthly, stating a single epistemic value is one way of avoiding the incommensurability problem \autocite{sep-value-theory}. zZzzz...
 
 
     \subsubsection{ Truth-Value-Monism vs. Pluralism about values }
@@ -387,7 +379,9 @@ What speaks in favor of truth value monism? It is very intuitive, perhaps.
 
 \section{Veritistic Accounts of Epistemic Normativity}
 \subsection{Can There Be Norms of Belief at All?}
-    \subsection{Doxastic Voluntarism and Ought Implies Can}
+\subsection{ axiological / deontic part. Perhaps list desiderata from ahlstrom, or taxonomy by Berker}
+\subsection{ If so, how plausible are they? Perhaps see Chisholm (quoted in \textcite{Goldman2002-GOLTUO-2})}
+\subsection{Doxastic Voluntarism and Ought Implies Can}
 
 \section{Veritistic Accounts of Epistemic Justification}
 \subsection{General Structure of a Veritistic Normative Framework (Berker)}
