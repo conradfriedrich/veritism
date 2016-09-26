@@ -4,6 +4,8 @@
 \usepackage[a4paper,lmargin={3cm},rmargin={3.5cm}, tmargin={2.5cm},bmargin = {2.5cm}]{geometry}
 \usepackage{amsmath}
 \usepackage{setspace}
+\usepackage{enumitem}   
+
 \onehalfspacing
 % Entfernt Blocksatz!
 % \usepackage[document]{ragged2e}
@@ -127,6 +129,8 @@ In Chapter 4, finally, I discuss the deontic or prescriptive epistemic norms in 
 
 In conclusion,
 
+\clearpage
+
 \section{Values, Norms and Truth}\label{sec:values}
 
 Why is it ever that anyone \emph{should} believe something, or is \emph{required} to believe, or is \emph{justified} in believing, or is \emph{rational} to believe? What is that yields some kind of normative requirement to the believer? A most natural answer, one that immediately springs to mind, is it's connection to the truth. You should believe that proposition because it is most likely to be true! (You are justified in believing that proposition because it is the only one that your evidence supports. It would be completely irrational to believe that other proposition, you don't have any reason to believe it.) What else than true belief is the epistemic goal of anyone in the business of believing anything, that is, a cognitive agent? It is this very intuitive thought that motivates postulating truth as an–or the–epistemic value.
@@ -206,6 +210,7 @@ So the interesting question is whether veritism can account for and explain the 
 % If this objection works, it lifts the normativity of belief \emph{out} of the merely epistemic domain. So I do not merely have an epistemic reason, but a good reason, \emph{simpliciter}
 % \footnote{This does not amount to all-things-considered reason, however, as there might be other, heftier reasons that outweigh my good reason derived from truth. This, though, is another contentious topic, and some hold the position that only epistemic reasons can give me a reason to belief anything \autocite{Kelly2003-KELERA}}.
 % But not much hangs on this claim for the purposes of this paper, since for normativity of belief to be relevant, it is enough to just apply to the epistemic domain. This question becomes relevant again as soon as one tries to compare epistemic (or intellectual) reasons with practical (or other minds of)reasons to determine an all-things-considered reason. That is not the target of this paper, though. If this norm is in fact  only hypothetical on my role as a believer–so be it.
+\clearpage
 
 \section{Veritism}
 
@@ -250,7 +255,6 @@ So it seems like veritism has a lot going for it. But of course, there are alter
 %     Deontological acounts want to account for the idea:
 
 %     [T]he theory of ‘ideal utilitarianism’ ... seems to simplify unduly our relations to our fellows. It says, in e ect, that the only morally signi cant relation in which my neighbors stand to me is that of being possible bene ciaries by my actions.  ey do stand in this relation to me, and this relation is morally signi cant. But they may also stand to me in the relation of a promisee to a promiser, of friend to friend, of fellow countryman to fellow countryman, and the like; and each of these relations is the foundation of a prima facie duty. \autocite[19]{Ross1930}
-
 
 \subsection{Varieties of Veritism}\label{sec:varieties}
 
@@ -451,7 +455,7 @@ In this section, i presented the objection from significance to veritism. It sta
 
 Mehr erklären wie das beides zusammen geht. Aus beiden rohren schießen, divide and conquer mäßig.
 
-
+\clearpage
 \section{Veritistic Accounts of Epistemic Norms}
 
 Is there a single deontic norm of belief that is both plausible non-contradictory? With just a single norm, it is difficult to capture the range of intuition about norms of belief that seem to exist. With more than one norm, this can be easier, but then there could be cases where the norms contradict. Which norm overrules the other, then? Can such an ordering be sensibly made at all?
@@ -564,7 +568,7 @@ I think this one of the most natural and basic truisms about epistemology: We ca
 \end{enumerate}
 Both approaches have a host limitations and objections that can be filed against them. Some of them apply to both approaches, some only to one of them.
 
-\subsubsection{The Goal of Belief}
+\subsubsection{The Goal of Belief}\label{sec:goalofbelief}
 
 What could this goal for an ideal epistemic being look like? And what would it help us with? \textcite[157]{David2001-DAVTAT-7} proposes:
 
@@ -594,11 +598,18 @@ If she does not, then TG* is false. That is no option. But if she does have a ma
 
 In the literature on truth norms, one recurring issue are so-called \emph{Moore-paradoxical propositions} \autocite[6]{Wedgwood2013-WEDTRT}. They have the form of 
 \begin{description}
-    \item[MP] $p$, but I don't believe that $p$
+    \item[MP] $p$, but I don't believe that $p$.
 \end{description}
-They present a particular problems to deontic truth norms in the following way: Suppose MP is true. Then, any guiding truth norm would require the subject to believe MP, and if the subject does so, the resulting belief would be false, since S does now believe that $p$\footnote{That is, if belief is closed under elimination of conjunction, so if I believe that '$p$ and $q$', I believe $p$ and I believe $q$. I argued elsewhere that belief is not closed under logical entailment, but this is a different and weaker principle. Let's grant it for now to see where it goes.}. So the norm requires S to believe MP, and also require S to not believe MP. This seems fairly paradoxical. Does it pose a problem for the ideal epistemic being, too? The most accurate attitude towards MP is disbelief. Here is why: Suppose $p$ is true. Then, the accurate attitude is belief in $p$. So MP is false. Suppose $p$ is false. Then, MP is false. Hence, the most accurate attitude is disbelief. But what if the ideal being hasn't considered $p$ at all, before considering MP? That is, what if MP is true? That's a stretch for an ideal epistemic being, but let's go through it: if MP is true, the ideal being believes it. But then it's false! So the ideal being disbelieves it. There simply isn't this kind of normative dissonance as in the case of the truth norm. So, the ideal being comes out unscathed.
+In combination with a simple truth norm, they spell trouble. Consider a truth norm of the form
+\begin{description}
+    \item[TN] For all subjects S and propositions P: S ought to believe that P if and only if P is true.
+\end{description}
+
+They present a particular problems to deontic truth norms in the following way: Suppose MP is true. Then, any TN would require the subject to believe MP, and if the subject does so, the resulting belief would be false, since S does now believe that $p$\footnote{That is, if belief is closed under elimination of conjunction, so if I believe that '$p$ and $q$', I believe $p$ and I believe $q$. I argued elsewhere that belief is not closed under logical entailment, but this is a different and weaker principle. Let's grant it for now to see where it goes.}. So TN requires S to believe MP, and also require S to not believe MP. This seems fairly paradoxical. Does it pose a problem for the ideal epistemic being, too? The most accurate attitude towards MP is disbelief. Here is why: Suppose $p$ is true. Then, the accurate attitude is belief in $p$. So MP is false. Suppose $p$ is false. Then, MP is false. Hence, the most accurate attitude is disbelief. But what if the ideal being hasn't considered $p$ at all, before considering MP? That is, what if MP is true? That's a stretch for an ideal epistemic being, but let's go through it: if MP is true, the ideal being believes it. But then it's false! So the ideal being disbelieves it. There simply isn't this kind of normative dissonance as in the case of the truth norm. So, the ideal being comes out unscathed.
 
 So it seems like the ideal being is not so easy to fool.
+
+\subsubsection{The Derivation}
 
 The question is now whether this can be spelled out in terms relevant to human beings to do justice to \emph{the natural reaction}. This is not a trivial task. \textcite[Ch. 4]{Gibbons2013-GIBTNO} is especially vocal about its challenge.
 \noindent \textcite[Ch. 4]{Boghossian2008-BOGCAJ} acknowledges that it has proven extremely difficult to say how exactly such a norm could be derived. \textcite[16]{Greenberg2016-GREITN} puts it like this:
@@ -614,12 +625,87 @@ A consequentialist theory needs some bridge principle or other to connect its ev
 
 Let's go with something very general like the following:
 
-If my goal is X, I ought to use the best means accessible to me to achieve X.
+\begin{description}
+    \item[BP] If S's goal is X, S ought to use the best means accessible to her to achieve X.
+\end{description}
 
-In the epistemic case these means could be responding to reasons, proportion my beliefs to the evidence and so on. There is one contentious word in here, though, which is \emph{best}. This seems to be evaluative as well, and this bridge principle should not need an additional unspecified source of value. However, I don't think much hangs on this, and charitably read this could be interpreted as ‘the means that make it most likely to achieve’ or something along these lines.
+In the epistemic case these means could mean responding to reasons, proportion my beliefs to the evidence and so on. There is one contentious word in here, though, which is \emph{best}. This seems to be evaluative as well, and this bridge principle should not need an additional unspecified source of value. However, I don't think much hangs on this, and charitably read this could be interpreted as ‘the means that make it most likely’ or something along these lines.
+
+The goal should be in some sense resembling TG*. In fact, any change would need motivation to not seem \emph{adhoc}. So let us just state TG* as the goal. The derivation then looks something like this:
+
+\begin{enumerate}
+    \item[P1] The goal of any believer S is that for all propositions $p$, S has a maximally accurate doxastic attitude towards $p$. (From TG*)
+    \item[P2] If S's goal is X, S ought to use the best means available to her to achieve X. (BP)
+    \item[\textbf{MN}] S ought to use the best means accessible to her to achieve that for all $p$, S has a maximally accurate doxastic attitude towards $p$. (From P1 and P2)
+\end{enumerate}
+
+I presuppose here that the goal stated just is the goal of any believer. This may be questioned, as for example \textcite{Kelly2003-KELERA} does. However, this is what the veritist account does for us. Compare: “it is no objection to hedonistic act-utilitarianism that there are some pleasurable experiences that some of us don’t desire to bring about” \autocite[362]{Berker2013-BERETA-2}. It is central to epistemic evaluation in a theory to be compared to the epistemic goal stated by the theory, regardless of whether the subject actually possesses that goal. Maybe P1 and P2 have to be rephrased a bit to incorporate this finer point.
+
+One could object that MN is not really a norm of belief. After all, it does not state, exactly, when to adopt a doxastic attitude. Maybe proponents of this view would prefer a norm of the form
+\begin{description}
+    \item[MN*] For all $p$ (S ought to adopt D towards $p$ if and only if S's best means accessible to her suggest adopting a maximally accurate doxastic attitude D towards $p$).
+\end{description}
+I do not think that much hangs on this objection, and would, of course, be willing to concede alternative representations. However, one would have to tell a story as to how this can be derived in the veritist picture and have to review whether the desiderata and objections below are met.
+
+\subsubsection{The Norm of Belief}
+
+To see whether MN is any plausible, I've compiled a list of desiderata and common objections to deontic epistemic norms, which I motivate and discuss in turn:
+\begin{enumerate}
+    \itemsep-0.2em
+    \item \label{item:dox} The norm should account for the doxastic attitudes of \emph{believing}, \emph{disbelieving} and \emph{suspension of judgment}.
+    \item \label{item:guiding} It should be \emph{guiding} in a relevant sense.
+    \item \label{item:accessible}It should be \emph{accessible} to a subject.
+    \item \label{item:arbitrarilylong}It should not require a subject to believe \emph{arbitrarily long propositions}.
+    \item \label{item:arbitrarilymany}It should not require a subject to believe \emph{arbitrarily many propositions}.
+    \item \label{item:blindspot}It should not require a subject belief so-called \emph{blindspot propositions}.
+    \item \label{item:compatible}It should be \emph{compatible} with what on usually takes to be a deontic epistemic norm, such as following one's evidence.
+    \item \label{item:nontrivial}It should be \emph{non-trivial} in that it is possible, not only theoretically, to violate the norm.
+\end{enumerate}
+
+Additionally, I don't list these points as desiderata for reasons that I discuss, but mention them nonetheless:
+\begin{enumerate}[label=(\roman*)]
+    \item \label{item:insignificant}Insignificant propositions.
+    \item \label{item:self-fulfilling}Self-fulfilling propositions.
+\end{enumerate}
+
+(\ref{item:dox}) \emph{Doxastic attitudes.} 
+As argued before, a deontic norm should require the subject to believe, disbelieve and suspend judgment, given the circumstances. Does MN deliver that? I argue that it does. In cases where the subject's best means point to the truth of $p$, the maximally correct attitude is belief. Analogously in the case of disbelief. For suspending judgment, the case is a bit more complicated, since suspension of judgment is never objectively maximally accurate. However, the norm requires the subject to use the best means accessible to her to achieve or bring it about to have the maximally accurate doxastic attitude towards $p$. In cases where the evidence is indecisive, from the subject's perspective, the maximally accurate attitude is to suspend judgment. Since for neither full belief nor disbelief would be maximally accurate in this case. This would extend to degrees of belief, if we were to incorporate this model into the theory. This point is arguably not really fleshed out, and there may be some additional modification necessary to relativize the goal to the subject's position. For the present purposes this has to suffice.
+
+(\ref{item:guiding}) \& (\ref{item:accessible}) \emph{Guidance and accessibility.}
+ Is MN compatible with the natural reaction? It only requires the subject for use means accessible to her, so that condition is satisfied. Roughly speaking, it seems to provide guidance in a relevant sense, too: S ought to use the best means available to her. This is not so innocent as it might sound, however, since how is S to know which means actually are the best means? Interpreted as those means that make it most likely, S might not be in a position to know which means available to her make it most likely, and then the problem of the natural reaction just appears again on a different level. To stipulate that she should use what she \emph{believes} to be the best means is not the right move, however, because then the norm would be completely arbitrary on her beliefs, and someone believing her, say, gut feeling to be the best means to achieve the epistemic goal would then be normatively required to do so. To say those means which she ought to believe the best means is simply begging the question, and to say something about what she justifiedly believes to be the best means would unnecessarily introduce this epistemic notion into the definition of deontic epistemic normativity, and that is not what the veritist wants. However, by spelling out what the actual means \emph{are}, this could be avoided, if these entail that S is in a position to know them. This question dives deep into the discussion about justification and might touch on an ongoing debate about internalism and externalism. This is not the place for that discussion.
+
+(\ref{item:arbitrarilylong}) \emph{Arbitrarily long propositions.} 
+Some proposition are such that no human being can believe them. \textcite[12]{Mchugh2012-MCHTTN} poses this challenge thusly: “But there are many true propositions that are too complex for any person to grasp, and hence too complex to believe”. \textcite[279]{Bykvist2007-BYKDTI} stress that it is metaphysically or biologically impossible for human being to understand some extremely complex propositions. With the appeal to \emph{ought implies can}, with ‘can’ read as metaphysical or biological possibility, a norm that would require the subject to do so would be false. I argue that MN does not require the subject to believe arbitrarily long propositions, on the grounds that S should use the best means accessible to her. These means most plausible employ some kind of cognitive process responsible for considering and evaluation proposition. If this process cannot deal with indefinitely complex propositions, then the norm does not require the subject to do so. If it can, however, I don't see why the subject can't form any doxastic attitude towards it. So MN does satisfy this condition.
+
+One might also respond to this and similar objections that what is to be expressed by the norm is not what a subject should do or believe, but instead what she may or what is permissible for her to believe.
+
+(\ref{item:arbitrarilylong}) \emph{Arbitrarily many propositions.}
+To believe all true proposition is something no human being can achieve. It does not need a philosopher to make this claim obvious. The number of true propositions is positively indefinite. A norm that requires this of the subject entails than one is “unavoidably violating an indefinite number of requirements” \autocite[12]{Mchugh2012-MCHTTN}. This is not only unplausible, but given \emph{ought implies can}, it also falsifies the norm. The response I give to this objection is the same as above, it simply fails to threaten MN. The subject's cognitive processes most probably won't allow for an indefinite number of propositions to believe. But since those are, arguably, the means with which the subject is to achieve the goal, she is not required by the norm to believe each and all propositions.
+
+(\ref{item:blindspot}) \emph{Blindspot propositions}
+In section \ref{sec:normsofbelief} I presented the challenge from \emph{Moore-paradoxial propositions} or what \textcite[281]{Bykvist2007-BYKDTI} call \emph{blindspot propositions}. Truth norms like TN above in particular suffer from this challenge and are usually altered to meet the requirements posed\footnote{See for example: \textcite[282]{Bykvist2007-BYKDTI}, \textcite[12]{Mchugh2012-MCHTTN}, \textcite[6]{Greenberg2016-GREITN}.}. The problem arises because the truth norm requires the subject to believe the true proposition, given it is true, and thereby making it false, and hence also requiring the subject to not believe it. So this proposition generates a normative contradiction in conjunction with a truth norm like TN. Does this pose a problem for MN, too? Consider a subject cognitively capable of recognizing that if she were to believe such a proposition, she would thereby believe falsely. Her best means then surely suggest not to believe this proposition. No contradiction here. But then suppose she is not capable of seeing the problem at all. She just goes for $p$, thinks it true, and then believes MP on the basis of that. TN tells her thusly to belief a false proposition. But this is not problematic, since we explicitly want to allow for the norm to encourage going after what the evidence suggests, even if the proposition is false.
+
+S ought to use the best means accessible to her so that for all $p$, she adopts the maximally accurate doxastic attitude $D$ towards $p$ available to her if she can adopt $D$ and adopting $D$ would add additional value to her overall beliefs.
+
+for all $p$, if S can grasp $p$, S ought to use the best means accessible to her to bring it about that she adopts the maximally accurate doxastic attitude $D$ towards $p$, if adopting $D$ would add additional value to her overall beliefs.
+
+S ought to use the best means accessible to her to bring it about that (for all $p$, if S can grasp $p$, S adopts the maximally accurate doxastic attitude D towards $p$ and adopting $D$ would add additional value to her overall beliefs).
+
+\ref{item:dox} As stated before, the deontic norm should plausibly require the subject to believe, disbelieve and suspend judgment in cases that we intuitively judge she should. So for example, if the evidence is plentyful but indecisive, S should suspend judgment. The deontic norm should deliver that verdict. Does it in the current form? It doesn't.
+
+There is a problem in this phrasing, though, with \emph{arbitrarily long propositions} \autocite[]{Greenberg2016-GREITN}.
 
 \textcite[39]{Boghossian2003-BOGTNO} on what could be subjective norms: that we ought to believe that which is supported by the evidence and not believe that which has no support; that we ought not to believe p if some alternative proposition incompatible with p has a higher degree of support; that we ought to believe p only if its degree of support is high enough, given the sort of proposition that it is, and so on. 
 
+-) blindspot propositions
+-) self-fulfilling propositions
+-) should be guiding in some sense (gibbons, mchugh)
+-) should be accessible is some sense
+-) should exclude arbitrary many propositions (?)
+-) what about insignificant propositions?
+-) should respond to evidence
+-) should take into account all doxastic attitudes
+-) should not render irrational someone who is dumb
 
 \subsubsection{The Norm of Belief}
 
@@ -649,15 +735,7 @@ needs additional motivation..
 
 Suffers from: -) arbitrarily long propositions
 
--) blindspot propositions
--) self-fulfilling propositions
--) should be guiding in some sense (gibbons, mchugh)
--) should be accessible is some sense
--) should exclude arbitrary many propositions (?)
--) what about insignificant propositions?
--) should respond to evidence
--) should take into account all doxastic attitudes
--) should not render irrational someone who is dumb
+
 
 
 What is the actual content of a plausible norm of belief, supposing that veritism is true? Is there more than one true norm of belief? What conditions should they satisfy to plausibly generate any normative power? These are the questions I want to address in this section.
@@ -740,25 +818,6 @@ It could be argued, then, what the epistemic goal states is just some hypothetic
 \subsubsection{Objective Norms and Subjective Norms}
 
 But there is another reading on the epistemic goal or fundamental truth norm. It takes into account that epistemic subjects are in states of imperfect information, that they can't just intuit the truth. This idea says that this norm is binding in an objective sense, so that it must still be possible for a human being to follow it, given the person has perfect information. \textcite{Gibbard2005-GIBTAC} takes this idea quite seriously.
-
-\subsubsection{}
-
-Could this idea be made any more precise? How could such an evidential or means-end requirement be derived from veritism?
-
-accurate belief is the only valuable belief
-If my goal is to X, then i should use the means that I can to achieve X
-My goal as a believer is to X
-
-(2+3 zusammenfassen zu kategorischer epistemischer norm zusammenzufassen)
-
-Hence, I am required to use the means that I can to have all and only accurate beliefs
-Of course, this has been said over and over in the literature.
-
-
-
-This could be made a bit more precise by saying ought implies can and maybe it is an epistemic possibility
-
-
 
 objective and subjective oughts
 \textcite{Gibbard2005-GIBTAC} 
